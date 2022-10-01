@@ -1,0 +1,57 @@
+# Me
+.jonathan
+
+# Mac OS X hidden files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+.Spotlight-V100
+.Trashes
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+ehthumbs.db
+
+# Application specific files ---------------------------------------------------
+
+# Javascript
+node_modules
+npm-debug.log
+yarn-error.log
+
+# PHP
+vendor
+.php_cs.cache
+.phpunit-watcher-cache.php
+.phpunit.result.cache
+
+# Laravel
+storage/framework/
+.env
+
+# Vim 
+.*.sw?
+
+# vs code
+.vscode
+
+# Sublime Text
+*.sublime-project
+
+# Compiled files ---------------------------------------------------------------
+
+*.pyc
+*.out
+
+# JetBrains --------------------------------------------------------------------
+
+.idea/
