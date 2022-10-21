@@ -1,0 +1,109 @@
+# Behavior
+set linenumbers
+set constantshow
+set smarthome
+set tabstospaces
+set positionlog
+set tabsize 4
+set stateflags
+set autoindent
+set zap
+
+# Apperance
+set indicator
+set minibar
+set keycolor purple
+set numbercolor black,purple
+set promptcolor black,purple
+set scrollercolor purple
+set statuscolor purple,black
+set promptcolor black,purple
+set titlecolor black,purple
+set selectedcolor black,purple
+
+# Unbinds
+unbind ^Z main
+unbind ^H main
+unbind ^X main
+unbind ^O main
+unbind ^R main
+unbind ^W main
+unbind ^/ main
+unbind ^F main
+unbind ^K main
+unbind ^U main
+unbind ^C main
+unbind ^T main
+unbind M-U main
+unbind M-E main
+unbind M-W main
+unbind ^B main
+unbind ^Q main
+unbind ^A main
+unbind ^E main
+unbind ^P all
+unbind ^N all
+unbind M-3 main
+unbind M-] main
+unbind M-F all
+unbind ^G main
+
+# Global
+bind ^\ nohelp all
+bind ^F whereis all
+bind M-G findnext all
+bind Sh-M-G findprevious all
+
+# Main Menu
+bind M-# help main
+bind F1 help main
+bind ^Q exit main
+bind M-Q exit main
+bind ^W writeout main
+bind ^O insert main
+bind ^R replace main
+bind ^X cut main
+bind ^V paste main
+bind M-X execute main
+bind ^Z undo main
+bind ^Y redo main
+bind ^/ comment main
+bind M-Y zap main
+bind ^] findbracket main
+bind ^C copy main
+bind Sh-M-L formatter main
+bind ^G gotoline main
+bind M-] indent main
+bind M-[ unindent main
+
+# Help Menu
+bind F1 exit help
+bind M-# exit help
+bind ^U pageup help
+bind ^D pagedown help
+
+# Syntax Highlighting
+include "~/.nano/css.nanorc"
+include "~/.nano/dotenv.nanorc"
+include "~/.nano/Dockerfile.nanorc"
+include "~/.nano/etc-hosts.nanorc"
+include "~/.nano/git.nanorc"
+include "~/.nano/gitcommit.nanorc"
+include "~/.nano/html.nanorc"
+include "~/.nano/ini.nanorc"
+include "~/.nano/java.nanorc"
+include "~/.nano/javascript.nanorc"
+include "~/.nano/js.nanorc"
+include "~/.nano/json.nanorc"
+include "~/.nano/nanorc.nanorc"
+include "~/.nano/nginx.nanorc"
+include "~/.nano/sql.nanorc"
+include "~/.nano/xml.nanorc"
+include "~/.nano/yaml.nanorc"
+include "~/.nano/zsh.nanorc"
+include "~/.nano/markdown.nanorc"
+
+# PHP Linting
+include "~/.nano/php.nanorc"
+extendsyntax php linter phpcs --report=emacs
+extendsyntax php formatter phpcbf
