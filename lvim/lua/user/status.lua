@@ -1,6 +1,3 @@
--- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
--- ┃ Status bar                                                                 ┃
--- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 local components = require("lvim.core.lualine.components")
 
 lvim.builtin.lualine.sections.lualine_a = {
@@ -8,8 +5,7 @@ lvim.builtin.lualine.sections.lualine_a = {
   "mode"
 }
 lvim.builtin.lualine.sections.lualine_b = {
-  -- components.branch,
-  "branch"
+  components.branch,
 }
 lvim.builtin.lualine.sections.lualine_c = {
   "diff",

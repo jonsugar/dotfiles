@@ -28,6 +28,6 @@ lvim.builtin.telescope.pickers.lsp_dynamic_workspace_symbols = telescope_default
 lvim.builtin.telescope.pickers.live_grep = telescope_default
 lvim.builtin.telescope.pickers.buffers = telescope_no_preview
 
-lvim.builtin.telescope.defaults.prompt_prefix = "   "
-lvim.builtin.telescope.defaults.selection_caret = "  "
+lvim.builtin.telescope.defaults.prompt_prefix = " find: "
+lvim.builtin.telescope.defaults.selection_caret = " > "
 lvim.builtin.telescope.defaults.entry_prefix = "   "
