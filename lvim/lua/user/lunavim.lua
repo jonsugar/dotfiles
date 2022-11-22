@@ -1,5 +1,5 @@
 -- ==============================================================================
--- = Vim compatible configuration                                               =
+-- Vim compatible configuration
 -- ==============================================================================
 
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
@@ -26,7 +26,7 @@ vim.opt.writebackup = false -- if a file is being edited by another program (or 
 
 
 -- ==============================================================================
--- = Lunarvim specific configuration                                            =
+-- Lunarvim specific configuration
 -- ==============================================================================
 
 lvim.builtin.alpha.dashboard.section.header.val = {
