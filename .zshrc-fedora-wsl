@@ -74,7 +74,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # See, https://github.com/Schniz/fnm
 eval "$(fnm env --use-on-cd)"
 
-source $HOME/.config/broot/launcher/bash/br
+source "$HOME"/.config/broot/launcher/bash/br
 
 # ==============================================================================
 # Aliases
@@ -88,10 +88,10 @@ alias ls='lsd'
 alias tree='broot'
 alias nv='br --only-folders'
 alias ip='curl http://ipecho.net/plain; echo'
-alias edit:zshrc="${EDITOR} ~/.zshrc"
-alias env:find="env | fgrep"
+alias edit:zshrc='$EDITOR ~/.zshrc'
+alias env:find='env | fgrep'
 alias clear:history='echo "" > ~/.zsh_history'
 
 function alias:ls {
-    alias | fgrep --color=never $1 | awk '{FS = "="; printf("%-10s %s\n",$1,$2) }'
+    alias | grep -F --color=never "$1" | awk '{FS = "="; printf("%-10s %s\n",$1,$2) }'
 }
