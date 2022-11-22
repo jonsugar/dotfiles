@@ -74,7 +74,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # See, https://github.com/Schniz/fnm
 eval "$(fnm env --use-on-cd)"
 
-source /home/jonsugar/.config/broot/launcher/bash/br
+source $HOME/.config/broot/launcher/bash/br
 
 # ==============================================================================
 # Aliases
