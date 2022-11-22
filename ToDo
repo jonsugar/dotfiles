@@ -1,0 +1,49 @@
+================================================================================
+Brew configuration script
+================================================================================
+
+	Install Linuxbrew
+
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+	Default Brew packages
+
+	brew install \
+		brew-gem gem-bashly \
+		htop lsd broot \
+		php composer python rust
+		gcc \ 
+		neovim nano
+
+================================================================================
+Git configuration script
+================================================================================
+
+	Configure git
+
+	1. git config --global user.name <name>
+	2. git config --global user.email <email>
+	3. git config --global core.editor <editor>
+	4. git config --global init.defaultBranch <name>
+	5. ln -s <dotfiles_install>/git/.global-gitignore .gitignore \
+	   && git config --global core.excludesfile ~/.gitignore
+
+	Configure the GitHub Commandline tool
+	
+	1. brew install gh
+	2. gh auth login
+	3. Follow prompts…
+
+	Configure gitmoji
+
+	1. brew install gitmoji
+	2. gitmoji --config
+
+================================================================================
+Javascript Configuration Script
+================================================================================
+
+	Install fnm (Fast Node Manager)
+	
+	1. brew install fnm
+	2. fnm install --lts

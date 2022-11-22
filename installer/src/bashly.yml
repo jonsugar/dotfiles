@@ -1,0 +1,16 @@
+name: lake
+help: Laravel tooling for Linix 
+version: 0.1.0
+
+commands:
+- name: init
+  help: Initialise Lake
+
+  flags:
+  - long: --force
+    short: -f
+    help: Overwrite existing installation
+
+  examples:
+  - lake init 
+  - lake init [-f|--force]
