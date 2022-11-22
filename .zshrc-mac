@@ -51,7 +51,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/Users/jonsugar/Library/Application Support/Coursier/bin:$PATH"
 export NVM_SYMLINK_CURRENT=true
 export NVM_DIR=~/.nvm
-. $HOME/.dotfiles/shell/z.sh
+. $HOME/Projects/Me/dotfiles/z.sh
 source $(brew --prefix nvm)/nvm.sh
 source /Users/jonsugar/.config/broot/launcher/bash/br
 
