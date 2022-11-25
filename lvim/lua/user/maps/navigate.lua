@@ -14,8 +14,6 @@ normalKeymap["<C-l>"] = "<C-w>l"
 -- Switch buffer
 normalKeymap["<S-l>"] = ":bnext<CR>"
 normalKeymap["<S-h>"] = ":bprevious<CR>"
-insertKeymap["<S-l>"] = ":bnext<CR>"
-insertKeymap["<S-h>"] = ":bprevious<CR>"
 
 -- Go to file
 normalKeymap["<M-e>f"] = "<CMD> Telescope find_files <CR>"

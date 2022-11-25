@@ -29,3 +29,9 @@ lvim.builtin.which_key.mappings["S"] = {
     u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
 }
+
+lvim.builtin.which_key.mappings["O"] = {
+  name = "Open File",
+  z = { ":tabedit /Users/jonsugar/.zshrc <CR>", ".zshrc" },
+  L = { ":tabedit /Users/jonsugar/.config/lvim/ <CR>", "Lunarvim" },
+}

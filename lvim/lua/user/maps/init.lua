@@ -11,6 +11,6 @@ vim.cmd([[
    vnoremap j k
    vnoremap k j
 
-   nmap <leader>ec :tabedit /Users/jonsugar/.config/lvim/config.lua<cr>
-   nmap <leader><space> :nohlsearch<cr>
+   nmap <LEADER>ec :tabedit /Users/jonsugar/.config/lvim/config.lua<CR>
+   nmap <LEADER><SPACE> :nohlsearch<CR>
 ]])
