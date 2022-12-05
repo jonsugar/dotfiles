@@ -12,7 +12,6 @@ source "$DOTFILES"/zsh/EnvVars.zsh
 source "$DOTFILES"/zsh/History.zsh
 source "$DOTFILES"/zsh/Keybind.zsh
 source "$DOTFILES"/zsh/Aliases.zsh
-source "$DOTFILES"/zsh/Other.zsh
 
 # ==============================================================================
 # Boot Tooling
@@ -26,8 +25,16 @@ source "$HOME"/.config/broot/launcher/bash/br
 
 source "$DOTFILES"/z.sh
 
-# Fix "" bug in Fig
-unalias -- -
+# ==============================================================================
+# iTerm 2 shell integration
+# ==============================================================================
+
+if [[  "$TERM_PROGRAM" = "iTerm.app" && -e "${HOME}/.iterm2_shell_integration.zsh" ]]
+then
+  echo 'Loading iTerm shell integration for zsh'
+  source "${HOME}/.iterm2_shell_integration.zsh"
+fi
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
