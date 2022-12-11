@@ -16,6 +16,12 @@ lvim.builtin.which_key.setup.window.position = "top"
 lvim.builtin.which_key.setup.window.margin = { 0, 0, 0, 0 }
 lvim.builtin.which_key.setup.window.padding = { 1, 0, 1, 0 }
 
+lvim.builtin.which_key.setup.plugins.presets.operators = true
+lvim.builtin.which_key.setup.plugins.presets.motions = true
+lvim.builtin.which_key.setup.plugins.presets.nav = true
+lvim.builtin.which_key.setup.plugins.presets.z = true
+lvim.builtin.which_key.setup.plugins.presets.g = true
+
 lvim.builtin.which_key.mappings["S"] = {
   name = "Settings",
   m = { "<cmd>Mason<cr>", "Linting and Formatting" },
