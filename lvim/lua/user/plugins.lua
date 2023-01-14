@@ -10,8 +10,8 @@ lvim.plugins = {
   {
     "tpope/vim-surround",
     keys = { "c", "d", "y" },
-    cmd = { "surround" },
-    setup = function()
+    cmd = { "Surround" },
+    init = function()
       vim.o.timeoutlen = 500
     end
   },
