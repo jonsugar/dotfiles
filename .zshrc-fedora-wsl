@@ -12,3 +12,11 @@ source "$DOTFILES"/zsh/EnvVars.zsh
 source "$DOTFILES"/zsh/History.zsh
 source "$DOTFILES"/zsh/Aliases.zsh
 source "$DOTFILES"/zsh/Other.zsh
+
+# ==============================================================================
+# Boot Tooling
+# ==============================================================================
+
+# fnm (Fast Node Manager)
+# See, https://github.com/Schniz/fnm
+eval "$(fnm env --use-on-cd)"
