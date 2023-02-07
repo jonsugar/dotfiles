@@ -8,6 +8,6 @@ precmd() {
 }
 
 # Plugins
-export plugins=(git npm brew composer copyfile copypath colored-man-pages branch)
+export plugins=(git npm brew composer copyfile copypath colored-man-pages branch z)
 
 source "$ZSH"/oh-my-zsh.sh
