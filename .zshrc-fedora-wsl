@@ -11,7 +11,6 @@ source "$DOTFILES"/zsh/OhMyZsh.zsh
 source "$DOTFILES"/zsh/EnvVars.zsh
 source "$DOTFILES"/zsh/History.zsh
 source "$DOTFILES"/zsh/Aliases.zsh
-source "$DOTFILES"/zsh/Other.zsh
 
 # ==============================================================================
 # Boot Tooling
