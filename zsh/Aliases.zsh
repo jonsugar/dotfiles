@@ -15,9 +15,8 @@ unalias -- -
 
 alias ls='lsd'
 alias tree='broot'
-alias grep='ggrep'
-alias fgrep='ggrep -F'
-alias egrep='ggrep -E'
+alias fgrep='grep -F'
+alias egrep='grep -E'
 alias nv='br --only-folders'
 alias ip='curl http://ipecho.net/plain; echo'
 alias edit:zshrc='$EDITOR ~/.zshrc'
