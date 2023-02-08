@@ -23,8 +23,6 @@ eval "$(fnm env --use-on-cd)"
 
 source "$HOME"/.config/broot/launcher/bash/br
 
-source "$DOTFILES"/z.sh
-
 # ==============================================================================
 # iTerm 2 shell integration
 # ==============================================================================

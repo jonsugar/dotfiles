@@ -1,6 +1,19 @@
 [
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  // Find
+  // Unbind
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  { "keys": ["super+o"], "command": "noop" },
+  { "keys": ["super+keypad_plus"], "command": "noop" },
+  { "keys": ["super+minus"], "command": "noop" },
+  { "keys": ["super+k", "super+y"], "command": "noop" },
+  { "keys": ["super+k", "super+k"], "command": "noop" },
+  { "keys": ["super+k", "super+backspace"], "command": "noop" },
+  { "keys": ["super+k", "super+c"], "command": "noop" },
+
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // Find and Replace
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   /* Find next*/  { "keys": ["ctrl+alt+."], "command": "find_next"},
@@ -11,19 +24,19 @@
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   /* Sub-word left */ {
-    "keys": ["ctrl+left"], "command": "move",
+    "keys": ["ctrl+alt+left"], "command": "move",
     "args": {"by": "subwords", "forward": false }
   },
 
   /* Sub-word right */ {
-    "keys": ["ctrl+right"], "command": "move",
+    "keys": ["ctrl+alt+right"], "command": "move",
     "args": {"by": "subword_ends", "forward": true }
   },
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   // Language-aware Navigation
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  
+
   /* Open file in project */ {
     "keys": ["super+shift+o"], "command": "show_overlay",
     "args": {"overlay": "goto", "show_files": true }
@@ -125,9 +138,16 @@
   // Selection
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  /* Select occurences */  { "keys": ["super+g"], "command": "find_under_expand" },
-  /* Expand selection */   { "keys": ["ctrl+shift+."], "command": "expand_region" },
-  /* Contract selection */ { "keys": ["ctrl+shift+,"], "command": "expand_region", "args": {"undo": true } },
+  /* Add selection of next occurrence */ {
+    "keys": ["super+g"], "command": "find_under_expand"
+  },
+
+  /* Move caret to next occurrence */ {
+    "keys": ["ctrl+g"], "command": "find_under_expand_skip"
+  },
+
+  /* Expand selection */        { "keys": ["ctrl+shift+."], "command": "expand_region" },
+  /* Contract selection */      { "keys": ["ctrl+shift+,"], "command": "expand_region", "args": {"undo": true } },
 
   /* Select sub-word left */ {
     "keys": ["ctrl+shift+left"], "command": "move",
@@ -139,24 +159,75 @@
     "args": {"by": "subword_ends", "forward": true, "extend": true }
   },
 
+  // --------------------
+  // Marks
+  // --------------------
+
+  { "keys": ["super+\\", "super+\\"], "command": "set_mark" },
+  { "keys": ["super+\\", "super+a"], "command": "select_to_mark" },
+  { "keys": ["super+\\", "super+d"], "command": "delete_to_mark" },
+  { "keys": ["super+\\", "super+s"], "command": "swap_with_mark" },
+  { "keys": ["super+\\", "super+g"], "command": "clear_bookmarks", "args": {"name": "mark"} },
+
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   // Editing
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  { "keys": ["super+shift+v"], "command": "paste_from_history" },
 
   /*Delete line*/ {
     "keys": [ "super+backspace" ], "command": "run_macro_file",
     "args": { "file": "res://Packages/Default/Delete Line.sublime-macro" }
   },
 
-  /* Dupicate line */  { "keys": ["super+d"], "command": "duplicate_line" },    
-  /* Move line up */   { "keys": ["super+shift+up"], "command": "swap_line_up" },
-  /* Move line down */ { "keys": ["super+shift+down"], "command": "swap_line_down" },
-  /* Join lines*/      { "keys": ["ctrl+shift+j"], "command": "join_lines" },
+  /* Duplicate line */  { "keys": ["super+d"], "command": "duplicate_line" },
+  /* Move line up */    { "keys": ["super+shift+up"], "command": "swap_line_up" },
+  /* Move line down */  { "keys": ["super+shift+down"], "command": "swap_line_down" },
+  /* Join lines*/       { "keys": ["ctrl+shift+j"], "command": "join_lines" },
+
+  /* Switch Case */ {
+    "keys": ["ctrl+super+m", "ctrl+super+m"], "command": "show_overlay",
+    "args": {"overlay": "command_palette", "text": "Convert Case"}
+  },
+
+  { "keys": ["ctrl+super+m", "ctrl+super+u"], "command": "upper_case" },
+  { "keys": ["ctrl+super+m", "ctrl+super+l"], "command": "lower_case" },
+  { "keys": ["ctrl+super+m", "ctrl+super+t"], "command": "title_case" },
+  { "keys": ["ctrl+super+m", "ctrl+super+k"], "command": "convert_ident_case", "args": {"case": "lower", "separator": "-"}, },
+  { "keys": ["ctrl+super+m", "ctrl+super+s"], "command": "convert_ident_case", "args": {"case": "lower", "separator": "_"}, },
+  { "keys": ["ctrl+super+m", "ctrl+shift+super+c"], "command": "convert_ident_case", "args": {"case": "title"} },
+  { "keys": ["ctrl+super+m", "ctrl+super+c"], "command": "convert_ident_case", "args": {"case": "title", "first_case": "lower"} },
+  { "keys": ["ctrl+super+m", "ctrl+super+d"], "command": "convert_ident_case", "args": {"case": "lower", "separator": "."} },
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  // Folding
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  { "keys": ["ctrl+-"], "command": "fold" },
+  { "keys": ["ctrl+="], "command": "unfold" },
+
+  // Fold all
+  { "keys": ["ctrl+z", "M"], "command": "fold_by_level", "args": {"level": 1} },
+  { "keys": ["super+-"], "command": "fold_by_level", "args": {"level": 1} },
+
+  // Unfold all
+  { "keys": ["ctrl+z", "R"], "command": "unfold_all" },
+  { "keys": ["super+="], "command": "unfold_all" },
+
+  // Fold by level
+  { "keys": ["ctrl+z", "1"], "command": "fold_by_level", "args": {"level": 1} },
+  { "keys": ["ctrl+z", "2"], "command": "fold_by_level", "args": {"level": 2} },
+  { "keys": ["ctrl+z", "3"], "command": "fold_by_level", "args": {"level": 3} },
+  { "keys": ["ctrl+z", "4"], "command": "fold_by_level", "args": {"level": 4} },
+  { "keys": ["ctrl+z", "5"], "command": "fold_by_level", "args": {"level": 5} },
+  { "keys": ["ctrl+z", "6"], "command": "fold_by_level", "args": {"level": 6} },
+  { "keys": ["ctrl+z", "7"], "command": "fold_by_level", "args": {"level": 7} },
+  { "keys": ["ctrl+z", "8"], "command": "fold_by_level", "args": {"level": 8} },
+  { "keys": ["ctrl+z", "9"], "command": "fold_by_level", "args": {"level": 9} },
 
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   // Refactor
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
   /* Rename */ {
     "keys": ["super+alt+r"], "command": "lsp_symbol_rename",
     "context": [
@@ -172,8 +243,10 @@
   // Panels
   // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+  { "keys": ["super+1"], "command": "toggle_side_bar" },
+
   {"keys": ["super+5"], "command": "sublime_linter_panel_toggle"},
-  
+
   // Toggle Diagnostics Panel
   {
     "keys": ["super+5"], "command": "lsp_show_diagnostics_panel",

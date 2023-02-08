@@ -25,19 +25,16 @@ lvim.builtin.which_key.setup.plugins.presets.g = true
 lvim.builtin.which_key.mappings["S"] = {
   name = "Settings",
   m = { "<cmd>Mason<cr>", "Linting and Formatting" },
-  p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    r = { "<cmd>lua require('lvim.plugin-loader').recompile()<cr>", "Re-compile" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
-  },
+  p = lvim.builtin.which_key.mappings["p"],
+  T = lvim.builtin.which_key.mappings["T"],
+  L = lvim.builtin.which_key.mappings["L"],
 }
 
 lvim.builtin.which_key.mappings["O"] = {
   name = "Open File",
   z = { ":tabedit /Users/jonsugar/.zshrc <CR>", ".zshrc" },
-  L = { ":tabedit /Users/jonsugar/.config/lvim/ <CR>", "Lunarvim" },
 }
+
+lvim.builtin.which_key.mappings["p"] = {}
+lvim.builtin.which_key.mappings["T"] = {}
+lvim.builtin.which_key.mappings["L"] = {}
