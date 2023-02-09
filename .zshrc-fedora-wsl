@@ -19,3 +19,6 @@ source "$DOTFILES"/zsh/Aliases.zsh
 # fnm (Fast Node Manager)
 # See, https://github.com/Schniz/fnm
 eval "$(fnm env --use-on-cd)"
+
+# Update system (Fedora, Brew and OhMyZSH)
+alias dnfa="dnfu -y && bubu && omz update"
