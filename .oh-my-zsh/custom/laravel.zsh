@@ -21,7 +21,7 @@ function composer:fresh() {
           rm -r vendor
           shift
           ;;
-        -*|--*)
+        -*)
           echo "Unknown option $1"
           exit 1
           ;;
@@ -49,7 +49,7 @@ function laravel:migrate-fresh() {
     echo
     echo "Refreshing the database ($cmd)"
     echo
-    eval $cmd
+    eval "$cmd"
 }
 
 function laravel:clear-caches() {
@@ -57,9 +57,9 @@ function laravel:clear-caches() {
 }
 
 function laravel:seed() {
-    for seeder in $@
+    for seeder in "$@"
     do
-        a db:seed --class $seeder
+        a db:seed --class "$seeder"
     done
 }
 
@@ -82,7 +82,7 @@ function laravel:fresh() {
           local DELETE_NPM=true
           shift
           ;;
-        -*|--*)
+        -*)
           echo "Unknown option $1"
           local CONTINUE=false
           shift
@@ -127,7 +127,7 @@ function _laravel:commands() {
 }
 
 function laravel:commands() {
-    $(_laravel:commands | fzf)
+    _laravel:commands | fzf
 }
 
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
@@ -160,19 +160,11 @@ alias tdf="vendor/bin/phpunit --testdox tests/Feature"
 alias tdu="vendor/bin/phpunit --testdox tests/Unit"
 
 # Pest
-
-pest ()
-{
-  vendor/bin/pest --testsuite pest $*
-}
-
-pest:g ()
-{
-  vendor/bin/pest --testsuite pest --group $*
-}
+alias pe="vendor/bin/pest --testsuite pest"
+alias peg="vendor/bin/pest --testsuite pest group"
 
 # ==============================================================================
-# Debuging
+# Debugging
 # ==============================================================================
 
 # function xd() {
