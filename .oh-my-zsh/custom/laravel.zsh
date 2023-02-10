@@ -123,7 +123,7 @@ function laravel:fresh() {
 }
 
 function _laravel:commands() {
-    typeset -f | grep ^laravel: | cut -d" " -f1 && alias | fgrep --color=never laravel: | cut -d"=" -f1
+    typeset -f | grep ^laravel: | cut -d" " -f1 && alias | grep -F --color=never laravel: | cut -d"=" -f1
 }
 
 function laravel:commands() {

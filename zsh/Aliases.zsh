@@ -15,11 +15,11 @@ unalias -- -
 
 alias ls='lsd'
 alias edit:zshrc='$EDITOR ~/.zshrc'
-alias env:find='env | fgrep'
+alias env:find='env | grep -F'
 alias clear:History='echo "" > ~/.zsh_history'
 
 function alias:ls {
-    alias | fgrep -F "$1" | awk '{FS = "="; printf("[ %10s ] %s\n",$1,$2) }'
+    alias | grep -F "$1" | awk '{FS = "="; printf("[ %10s ] %s\n",$1,$2) }'
 }
 
 # Development
