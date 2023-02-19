@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Install" type="ShConfigurationType" folderName="📦NPM">
-    <option name="SCRIPT_TEXT" value="vendor/bin/sail npm install" />
+  <configuration default="false" name="horizon:start" type="ShConfigurationType" folderName="󰫐  Artisan">
+    <option name="SCRIPT_TEXT" value="vendor/bin/sail artisan horizon" />
     <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
     <option name="SCRIPT_PATH" value="" />
     <option name="SCRIPT_OPTIONS" value="" />

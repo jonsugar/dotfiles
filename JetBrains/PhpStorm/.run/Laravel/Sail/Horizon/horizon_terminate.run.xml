@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Build" type="ShConfigurationType" folderName="⚡️Vite">
-    <option name="SCRIPT_TEXT" value="vendor/bin/sail npm run build" />
+  <configuration default="false" name="horizon:terminate" type="ShConfigurationType" folderName="󰫐  Artisan" activateToolWindowBeforeRun="false">
+    <option name="SCRIPT_TEXT" value="vendor/bin/sail artisan horizon:terminate" />
     <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
     <option name="SCRIPT_PATH" value="" />
     <option name="SCRIPT_OPTIONS" value="" />

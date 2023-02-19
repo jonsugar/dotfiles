@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Start" type="ShConfigurationType" folderName="⛵️Sail" activateToolWindowBeforeRun="false">
-    <option name="SCRIPT_TEXT" value="vendor/bin/sail up -d" />
+  <configuration default="false" name="sail:stop" type="ShConfigurationType" folderName="⛵️Sail" activateToolWindowBeforeRun="false">
+    <option name="SCRIPT_TEXT" value="vendor/bin/sail stop" />
     <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
     <option name="SCRIPT_PATH" value="" />
     <option name="SCRIPT_OPTIONS" value="" />
