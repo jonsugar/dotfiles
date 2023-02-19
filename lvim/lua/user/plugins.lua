@@ -3,8 +3,6 @@
 -- ==============================================================================
 
 lvim.plugins = {
-  { 'projekt0n/github-nvim-theme' },
-  { 'Th3Whit3Wolf/one-nvim' },
   { 'dracula/vim' },
   { 'tpope/vim-repeat' },
   {
