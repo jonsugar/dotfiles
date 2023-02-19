@@ -25,3 +25,9 @@ function alias:ls {
 # Development
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
+
+# Laravel
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+alias sail.start='sail up -d'
+alias sail.stop='sail stop'
+alias sail.test='sail test --coverage --profile'
