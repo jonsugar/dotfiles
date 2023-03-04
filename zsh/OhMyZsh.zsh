@@ -3,11 +3,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_THEME="crcandy"
 
-precmd() {
-  print ""
-}
-
 # Plugins
-export plugins=(git npm brew composer copyfile copypath colored-man-pages branch z dnf)
+export plugins=(iterm2 git npm brew composer copyfile copypath colored-man-pages branch z dnf)
+
+zstyle :omz:plugins:iterm2 shell-integration yes
 
 source "$ZSH"/oh-my-zsh.sh

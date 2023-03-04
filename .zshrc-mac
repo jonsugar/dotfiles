@@ -27,12 +27,6 @@ source "$HOME"/.config/broot/launcher/bash/br
 # iTerm 2 shell integration
 # ==============================================================================
 
-if [[  "$TERM_PROGRAM" = "iTerm.app" && -e "${HOME}/.iterm2_shell_integration.zsh" ]]
-then
-  echo 'Loading iTerm shell integration for zsh'
-  source "${HOME}/.iterm2_shell_integration.zsh"
-fi
-
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 

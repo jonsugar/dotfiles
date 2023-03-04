@@ -22,7 +22,7 @@ function alias:ls {
     alias | grep -F "$1" | awk '{FS = "="; printf("[ %10s ] %s\n",$1,$2) }'
 }
 
-# Development
+# Editors
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 
