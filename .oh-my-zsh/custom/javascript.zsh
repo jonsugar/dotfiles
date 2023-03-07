@@ -2,10 +2,6 @@
 # Javascript
 # ==============================================================================
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
 function npm:fresh() {
     echo
     if [ "$1" = "rm" ]; then
@@ -32,26 +28,34 @@ function npm:fresh-dev() {
 alias dev='npm run dev'
 alias build='npm run dev'
 
-function _nvm:commands() {
-    typeset -f | grep ^nvm: | cut -d" " -f1 && alias | fgrep --color=never nvm: | cut -d"=" -f1
+function _fnm:commands() {
+    typeset -f | grep ^fnm: | cut -d" " -f1 && alias | fgrep --color=never fnm: | cut -d"=" -f1
 }
 
-function nvm:commands() {
-    $(_nvm:commands | fzf)
+function fnm:commands() {
+    $(_fnm:commands | fzf)
 }
 
-function nvm:list-versions-and-alias() {
-    nvm ls
+function fnm:ls() {
+    if [ "$1" = "-r" ]; then
+      fnm list-remote
+    else
+      fnm list
+    fi
 }
 
-function nvm:list-versions() {
-    nvm ls --no-alias
+function fnm:install() {
+  if [[ $# -eq 0 ]]; then
+    fnm install --latest
+    return
+  fi
+
+  if [ "$1" = "--latest" ]; then
+    fnm install --latest
+  elif [ "$1" = "--lts" ]; then
+    fnm install --lts
+  else
+    fnm install $1
+  fi
 }
 
-function nvm:install-latest() {
-    nvm install stable --latest-npm
-}
-
-function nvm:install-lts() {
-    nvm install --lts --latest-npm
-}
