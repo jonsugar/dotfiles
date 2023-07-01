@@ -4,6 +4,7 @@
 
 lvim.plugins = {
   { 'dracula/vim' },
+  { 'Th3Whit3Wolf/one-nvim' },
   { 'tpope/vim-repeat' },
   {
     "tpope/vim-surround",

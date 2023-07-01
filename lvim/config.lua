@@ -2,7 +2,8 @@
 -- Apperance
 -- ==============================================================================
 
-lvim.colorscheme = 'dracula' -- dracula, github_light or github_dark_default
+lvim.colorscheme = 'one-nvim' -- dracula / one-nvim
+lvim.transparent_window = true
 
 -- ==============================================================================
 -- Key maps
