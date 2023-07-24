@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All" type="PestRunConfigurationType" focusToolWindowBeforeRun="true">
+    <CommandLine>
+      <envs>
+        <env name="XDEBUG_MODE" value="coverage" />
+      </envs>
+    </CommandLine>
+    <option name="pestRunnerSettings">
+      <PestRunner method="" scope="ConfigurationFile" />
+    </option>
+    <method v="2" />
+  </configuration>
+</component>

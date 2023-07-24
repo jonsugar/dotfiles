@@ -1,4 +1,13 @@
 # ==============================================================================
+# Tools
+# ==============================================================================
+
+# GNU Make
+
+PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
+
+
+# ==============================================================================
 # Other
 # ==============================================================================
 
@@ -12,7 +21,12 @@ measure ()
 }
 
 pstorm () {
-  local file=$(echo $* | cut -d':' -f1)
-  local linenum=$(echo $* | cut -d':' -f2)
-  phpstorm --line $linenum $file
+  local file;
+  file=$(echo "$@" | cut -d':' -f1)
+
+  local linenum;
+  local linenum;
+  linenum=$(echo "$@" | cut -d':' -f2)
+
+  phpstorm --line "$linenum" "$file"
 }

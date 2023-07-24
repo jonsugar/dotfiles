@@ -1,0 +1,101 @@
+{
+    "name": "jonsugar/action-runner",
+    "description": "A PHP action runner.",
+    "keywords": ["jonsugar", "action-runner"],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/jonsugar/action-runner",
+    "support": {
+        "issues": "https://github.com/jonsugar/action-runner/issues",
+        "source": "https://github.com/jonsugar/action-runner"
+    },
+    "authors": [
+        {
+            "name": "Jon Sugar",
+            "email": "jonathansugar@mac.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-mbstring": "*",
+        "illuminate/collections": "^10.13",
+        "illuminate/config": "^10.13",
+        "nesbot/carbon": "^2.67",
+        "rawr/t-regx": "^0.41.4",
+        "symfony/var-dumper": "^6.3"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.6",
+        "pestphp/pest": "^2.7",
+        "phpstan/extension-installer": "^1.3",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-mockery": "^1.1.1",
+        "phpunit/phpunit": "^10.2.2",
+        "laravel/pint": "^v1.10.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Arnold\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Arnold\\": "tests"
+        },
+        "files": [
+            "tests/helpers.php"
+        ]
+    },
+    "scripts": {
+        "check": [
+            "@composer audit",
+            "@composer check-platform-reqs",
+            "@composer diagnose"
+        ],
+        "ci": [
+            "@lint",
+            "@phpstan",
+            "@coverage",
+            "@check"
+        ],
+        "coverage": [
+            "XDEBUG_MODE=coverage pest"
+        ],
+        "lint": [
+            "pint --config pint.json",
+            "pint --config pint-tests.json"
+        ],
+        "phpstan": [
+            "phpstan"
+        ],
+        "test": [
+            "pest --no-coverage"
+        ]
+    },
+    "scripts-descriptions": {
+        "check": "run composer checks",
+        "ci": "run all tests with coverage, lints, phpstan and composer checks",
+        "coverage": "Run PHPUnit tests with coverage",
+        "lint": "lint using Laravel Pint",
+        "phpstan": "run static analysis using phpstan",
+        "test": "Run PHPUnit tests without coverage"
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

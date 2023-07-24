@@ -154,19 +154,34 @@ alias lint:pint="vendor/bin/pint"
 # Testing
 # ==============================================================================
 
-alias pu="vendor/bin/phpunit"
-alias td="vendor/bin/phpunit --testdox"
-alias tdf="vendor/bin/phpunit --testdox tests/Feature"
-alias tdu="vendor/bin/phpunit --testdox tests/Unit"
+alias pu="XDEBUG_MODE=coverage vendor/bin/phpunit"
+alias td="XDEBUG_MODE=coverage vendor/bin/phpunit --testdox"
+alias tdf="XDEBUG_MODE=coverage vendor/bin/phpunit --testdox tests/Feature"
+alias tdu="XDEBUG_MODE=coverage vendor/bin/phpunit --testdox tests/Unit"
 
 # Pest
-alias pe="vendor/bin/pest --testsuite pest"
-alias peg="vendor/bin/pest --testsuite pest group"
+
+pest ()
+{
+  vendor/bin/pest --testsuite pest "$@"
+}
+
+pest:g ()
+{
+  vendor/bin/pest --testsuite pest --group "$@"
+}
 
 # ==============================================================================
-# Debugging
+# PHP
 # ==============================================================================
 
-# function xd() {
-#     php -dxdebug.mode=debug -dxdebug.client_host=127.0.0.1 -dxdebug.client_port=9003 -dxdebug.start_with_request=yes $*
-# }
+function toggle_herd()
+{
+  if [ $HERD = true ]; then
+    export HERD=false
+  else
+    export HERD=true
+  fi
+
+  exec zsh -i --login
+}

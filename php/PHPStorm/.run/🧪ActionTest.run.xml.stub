@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="🧪ActionTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" focusToolWindowBeforeRun="true">
+    <TestRunner class="Tests\Arnold\Feature\Action\ActionTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Feature/Action/ActionTest.php" paratest_binary_path="$PROJECT_DIR$/vendor/bin/paratest_for_phpstorm" scope="Class" options="--no-coverage" />
+    <method v="2" />
+  </configuration>
+</component>

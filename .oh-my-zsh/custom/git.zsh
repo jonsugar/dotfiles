@@ -1,3 +1,6 @@
+# unalias unwanted aliases from the oh-my-zsh plugin
+unalias gcp
+
 function git:update {
   local branch="$(git rev-parse --abbrev-ref HEAD)"
   local cmd="git pull --rebase origin $branch"

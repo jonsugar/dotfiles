@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" focusToolWindowBeforeRun="true">
+    <TestRunner paratest_binary_path="$PROJECT_DIR$/vendor/bin/paratest_for_phpstorm" />
+    <method v="2" />
+  </configuration>
+</component>

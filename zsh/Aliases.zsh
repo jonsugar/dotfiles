@@ -31,3 +31,7 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias sail.start='sail up -d'
 alias sail.stop='sail stop'
 alias sail.test='sail test --coverage --profile'
+
+# Python
+alias python=python3
+alias pip=pip3
