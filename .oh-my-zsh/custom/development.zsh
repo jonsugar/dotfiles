@@ -28,5 +28,5 @@ pstorm () {
   local linenum;
   linenum=$(echo "$@" | cut -d':' -f2)
 
-  phpstorm --line "$linenum" "$file"
+  phpstorm-release --line "$linenum" "$file"
 }

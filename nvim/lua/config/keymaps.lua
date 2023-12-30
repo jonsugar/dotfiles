@@ -1,7 +1,15 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
+require("config.keymaps_phpstorm")
+
 local Util = require("lazyvim.util")
+
+-- -------------------------------------
+-- Motion
+-- -------------------------------------
+vim.keymap.set({"n", "v"}, "k", "j")
+vim.keymap.set({"n", "v"}, "j", "k")
 
 -- Reselect visual selection after indenting
 vim.keymap.set("v", ">", ">gv")
@@ -35,10 +43,6 @@ vim.keymap.set("n", "<A-j>", "<Esc>:move .-2<CR>==gi")
 vim.keymap.set("x", "<A-k>", ":move '>+1<CR>gv-gv")
 vim.keymap.set("x", "<A-j>", ":move '<-2<CR>gv-gv")
 
-vim.keymap.set("n", "<C-,>", "<CMD>Alpha<CR>")
-
--- Emulate PHPStorm
-vim.keymap.set("n", "<M-e>1", "<CMD>Neotree toggle<CR>")
-vim.keymap.set("n", "<M-e>9", function()
-  Util.float_term({ "lazygit" }, { cwd = Util.get_root(), esc_esc = false, ctrl_hjkl = false })
-end, { desc = "Lazygit (root dir)" })
+-- save file
+vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+vim.keymap.set({ "i", "x", "n", "s" }, "<M-e>s", "<cmd>w<cr><esc>", { desc = "Save file" })
